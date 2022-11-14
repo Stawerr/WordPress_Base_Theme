@@ -18,10 +18,35 @@ function wpdevs_config(){
             'wp_devs_footer_menu' => 'Footer Menu'
         )
     ); 
+    //Add custom hero
     $args=array(
         'height' => 225,
         'width' => 1920
     );
     add_theme_support( 'custom-header', $args );
+    //Add image to post
+    add_theme_support( 'post-thumbnails' );
+    //Add custom logo
+    add_theme_support( 'custom-logo', array(
+        'width' => 200,
+        'height' => 110,
+        'flex-height' => true,
+        'flex-width' => true,
+    ) );
 }
 add_action( 'after_setup_theme', 'wpdevs_config', 0 );
+
+add_action( 'widgets_init', 'wpdevs_sidebars', 0 );
+function wpdevs_sidebars(){
+    register_sidebar(
+        array(
+            'name' => 'Blog Sidebar',
+            'id' => 'sidebar-blog',
+            'description' => 'This is the Blog Sidebar. You can add your widgets here',
+            'before_widget' => '<div class="widget-wrapper">',
+            'after_widget' => '</div>',
+            'before_title' => '<h4 class="widget-title">',
+            'after_title' => '</h4>',
+        )
+    )
+}
