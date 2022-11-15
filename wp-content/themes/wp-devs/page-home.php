@@ -9,27 +9,7 @@
                     <section class="services">
                         <h2>Services</h2>
                         <div class="container">
-                            <div class="services-item">
-                                <?php 
-                                    if( is_active_sidebar( 'services-1' )){
-                                        dynamic_sidebar( 'services-1' );
-                                    }
-                                ?>
-                            </div>
-                            <div class="services-item">
-                                <?php 
-                                    if( is_active_sidebar( 'services-2' )){
-                                        dynamic_sidebar( 'services-2' );
-                                    }
-                                ?>
-                            </div>
-                            <div class="services-item">
-                                <?php 
-                                    if( is_active_sidebar( 'services-3' )){
-                                        dynamic_sidebar( 'services-3' );
-                                    }
-                                ?>
-                            </div>
+                            <?php get_template_part('parts/content', 'services'); ?>
                         </div>
                     </section>
                     <section class="home-blog">
@@ -48,21 +28,7 @@
 
                                     if( $postlist->have_posts() ):
                                         while( $postlist->have_posts() ) : $postlist->the_post();
-                                        ?>
-                                           <article class="latest-news">
-                                               <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'medium' ); ?></a>
-                                                <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                                                <div class="meta-info">
-                                                   <p>
-                                                    by <span><?php the_author_posts_link(); ?></span>
-                                                    Categories: <span><?php the_category( ' ' ); ?></span>
-                                                    Tags: <?php the_tags( '', ', ') ?>
-                                                   </p>
-                                                   <p><span><?php echo get_the_date(); ?></span></p>
-                                                </div>
-                                                <?php the_excerpt(); ?>
-                                            </article>
-                                        <?php
+                                        get_template_part('parts/content','latest-news');
                                         endwhile;
                                         wp_reset_postdata();
                                     else: ?>
