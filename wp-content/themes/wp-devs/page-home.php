@@ -3,8 +3,20 @@
         <div id="content" class="site-content">
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
-                    <section class="hero">
-                        Hero
+                    <section class="hero" style="background-image: url('http://localhost/udemy/wp-content/uploads/2022/11/Foto_Vinhos.jpg')">
+                        <div class="overlay" style="min-height: 800px">
+                            <div class="container">
+                                <div class="hero-items">
+                                    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    </h1>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad atque eaque
+                                        exercitationem harum incidunt ipsam maxime nesciunt, nostrum possimus, quaerat,
+                                        quidem repellendus suscipit.
+                                    </p>
+                                    <a href="#">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
                     </section>
                     <section class="services">
                         <h2>Services</h2>
